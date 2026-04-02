@@ -134,7 +134,7 @@ export default function RegisterPage() {
     if (hasErrors) return;
 
     setLoading(true);
-
+ 
     const payload = {
       event: selectedEvent,
       team_name: isTeam ? teamName : "",
@@ -162,6 +162,7 @@ export default function RegisterPage() {
       alert("Network error. Please try again.");
     }
   };
+ 
 
   if (isSuccess) {
     return (
