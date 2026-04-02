@@ -4,21 +4,25 @@ function RegisterCard() {
   return (
     <div className="relative w-[360px] h-[300px] bg-[#DD273E] border-[3px] border-black rounded-[3rem] flex flex-col items-center justify-center shadow-xl overflow-visible">
       
-      <div className="absolute 
-        -top-12 sm:-top-16 md:-top-24 
-        left-1/2 -translate-x-1/2 
-        z-50 pointer-events-none"
-      >
-        <Image
-          src="/hero/hero-finger.png"
-          alt="finger"
-          width={180}
-          height={180}
-          className="object-contain 
-            w-[110px] sm:w-[140px] md:w-[180px] 
-            h-auto"
-        />
-      </div>
+      <div
+  className="absolute 
+    -top-12 sm:-top-16 md:-top-24 
+    left-1/2 -translate-x-1/2 
+    z-50 pointer-events-none"
+>
+  <Image
+    src="/hero/hero-finger.png"
+    alt="finger"
+    width={180}
+    height={180}
+    className="
+      object-contain 
+      w-[110px] sm:w-[140px] md:w-[180px]
+      h-auto
+      finger-tap
+    "
+  />
+</div>
 
       <div className="relative mt-4 mb-8 flex flex-col items-center">
         <div className="absolute -bottom-3 z-10">
@@ -76,13 +80,8 @@ function EventHighlightsCard() {
       </div>
 
       <div className="mb-4">
-        <Image
-          src="/hero/event-highlights.png"
-          alt="Event Highlights"
-          width={150}
-          height={35}
-          className="object-contain"
-        />
+        <h1 className="text-black font-gliker font-semibold text-2xl">Event Highlights</h1>
+        
       </div>
 
       <div className="flex flex-col items-center gap-1">
@@ -93,22 +92,10 @@ function EventHighlightsCard() {
 
       <div className="mt-auto mb-8 relative flex items-center justify-center w-full">
         <div className="relative z-10 -mr-4">
-          <Image
-            src="/hero/register-dark.png"
-            alt="Register"
-            width={100}
-            height={30}
-            className="object-contain"
-          />
+          <h1 className="text-black font-gliker text-yellow-300 text-2xl">Register</h1>
         </div>
         <div className="relative z-0 opacity-80">
-          <Image
-            src="/hero/register-light.png"
-            alt="Register ghost"
-            width={100}
-            height={30}
-            className="object-contain"
-          />
+          <h1 className="text-black font-gliker text-yellow-200 text-2xl">Register</h1>
         </div>
       </div>
     </div>
@@ -130,13 +117,7 @@ function LeaderboardCard() {
       </div>
 
       <div className="mb-2">
-        <Image
-          src="/hero/leaderboard.png"
-          alt="Leaderboard"
-          width={140}
-          height={35}
-          className="object-contain"
-        />
+        <h1 className="text-black font-gliker font-semibold text-2xl">Leaderboard</h1>
       </div>
       <p className="text-black text-center text-[15px] leading-tight font-medium px-2 mt-4">
         #Climb the ranks and secure your spot at the top.
@@ -165,8 +146,8 @@ export default function Hero() {
       <div className="absolute 
         -top-20 md:-top-25 
         left-1/2 -translate-x-1/2 
-        w-[40px] sm:w-[60px] md:w-[84px] 
-        h-[520px] sm:h-[540px] md:h-[600px] 
+        w-[40px] sm:w-[60px] md:w-[92px] 
+        h-[620px] sm:h-[540px] md:h-[820px] 
         bg-white 
         z-0"
       />
@@ -184,27 +165,19 @@ export default function Hero() {
   
       <div className="relative z-10 text-center px-4 max-w-5xl">
 
-        <div className="hidden md:block">
-          <Image
-            src="/hero/hero-heading-desktop.png"
-            alt="Hero Heading"
-            width={800}
-            height={200}
-            className="mx-auto"
-            priority
-          />
-        </div>
-
-        <div className="block md:hidden">
-          <Image
-            src="/hero/hero-heading-phone.png"
-            alt="Hero Heading"
-            width={200}
-            height={200}
-            className="mx-auto"
-            priority
-          />
-        </div>
+       <h1 className="
+        font-gliker
+        font-semibold
+        text-[40px] md:text-[68px]
+        leading-tight
+        text-[#3A001D]
+        text-center
+        w-full max-w-[984px]
+        px-4
+      ">
+        Where Ideas Ignite.
+        Innovation Accelerates.
+      </h1>
 
         <p className="mt-4 md:mt-6 text-[#3b0a1e] font-medium 
           max-w-[80%] sm:max-w-md md:max-w-3xl 
@@ -212,7 +185,7 @@ export default function Hero() {
           text-[13px] sm:text-sm md:text-lg 
           leading-relaxed md:leading-relaxed"
         >
-          Join us for three electrifying days of hackathons, design battles, workshops, and competitions — all under one roof. Catalysis is where thinkers, creators, and innovators come to transform ideas into impact.
+          Join us for three electrifying days of hackathons, design battles, workshops, and competitions, all under one roof. Catalysis is where thinkers, creators, and innovators come to transform ideas into impact.
         </p>
       </div>
 <div className="relative w-full max-w-6xl mt-10">
