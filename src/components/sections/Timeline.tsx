@@ -293,11 +293,15 @@ export default function Timeline() {
       <Container>
         <div className="grid lg:grid-cols-2 gap-10">
 
-          <div className="flex flex-col justify-start lg:pt-2 max-w-lg">
-            <div className="mb-4">
-              <span className="px-6 py-2 text-sm border border-black rounded-full bg-white font-medium">
-                TIMELINE
-              </span>
+          {}
+          <div className="hidden lg:flex gap-6">
+            <div className="flex flex-col justify-between text-sm text-gray-600 pr-2">
+              {[
+                "09:00", "09:30", "10:00", "10:30", "11:00", "11:30",
+                "12:00", "12:30", "01:00", "01:30", "02:00", "02:30", "03:00",
+              ].map((t, i) => (
+                <span key={i}>{t}</span>
+              ))}
             </div>
 
             <div className="mb-6">

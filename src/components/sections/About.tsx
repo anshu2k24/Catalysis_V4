@@ -110,13 +110,6 @@ function Badge({
   );
 }
 
-const FLOAT_CLASSES = [
-  "animate-float-1",
-  "animate-float-2",
-  "animate-float-3",
-  "animate-float-4",
-];
-
 const MOBILE_BADGES: BadgeData[] = [
   { top: "5%",  left: "48%", label: "Pitch",        content: "STRATEGY TYPE", icon: "/about2/pitch.png",        primaryColor: "#F28B8B", secondaryColor: "#E05555" },
   { top: "20%", left: "14%", label: "DSA",           content: "PSYCHIC TYPE",  icon: "/about2/dsa.png",          primaryColor: "#4A9CC4", secondaryColor: "#2A6F9A" },
@@ -145,6 +138,16 @@ const LINES: LineData[] = [
   { src: "/about/Vector-5.png", top: "60%", left: "-35%", widthRatio: 0.61 },
 ];
 
+
+const FLOAT_CLASSES: string[] = [
+  "badge-float",
+  "badge-float-rev",
+  "badge-float-slow",
+  "badge-float-slow-rev",
+  "badge-float-fast",
+  "badge-float-fast-rev",
+  "badge-float-med",
+];
 
 function AboutMobile() {
   return (
@@ -257,7 +260,7 @@ function AboutRight() {
       {BADGES.map((badge, i) => (
         <div
           key={i}
-          className="absolute z-20 mt-20 transition-transform hover:scale-105"
+          className={`absolute z-20 mt-20 transition-transform hover:scale-105 ${FLOAT_CLASSES[i % FLOAT_CLASSES.length]}`}
           style={{
             top: badge.top,
             left: badge.left,

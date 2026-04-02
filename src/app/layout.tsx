@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Nunito } from "next/font/google";
 import Navbar from "@/components/layout/Navbar";
-import Footer from "@/components/layout/Footer"; // 1. Import the component
+import Footer from "@/components/layout/Footer";
 import "./globals.css";
 import PokeCursor from "@/components/ui/Pokecursor";
 
@@ -28,7 +28,7 @@ export default function RootLayout({
     >
       <body className="flex flex-col min-h-screen">
         <Navbar />
-        <PokeCursor /> {/* 2. Add the component here */}
+        <PokeCursor />
         <main className="flex-grow">
           {children}
         </main>
