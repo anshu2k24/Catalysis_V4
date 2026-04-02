@@ -3,16 +3,19 @@ import { useRouter } from "next/navigation";
 import Container from "@/components/common/Container";
 import CharizardCard from "../components/CharizardCard";
 import BulbasaurCard from "../components/BulbasaurCard";
+import { useInView } from "@/hooks/useInView";
 
 export default function Events() {
   const router = useRouter();
+  const [sectionRef, isInView] = useInView<HTMLElement>({ threshold: 0.1 });
+  const inView = isInView ? "in-view" : "";
 
   return (
-    <section id="events" className="py-12 md:py-24 bg-[#FFEEF0] overflow-hidden">
+    <section ref={sectionRef} id="events" className="py-12 md:py-24 bg-[#FFEEF0] overflow-hidden">
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16 items-center">
 
-          <div className="flex flex-col items-start text-left">
+          <div className={`flex flex-col items-start text-left reveal reveal-left ${inView}`}>
 
             <div className="mb-4 md:mb-6">
               <div className="inline-block border border-black rounded-full px-5 py-1.5 md:px-6 md:py-2 bg-white text-xs md:text-sm font-medium tracking-wide">
@@ -62,7 +65,7 @@ export default function Events() {
             </button>
           </div>
 
-          <div className="flex flex-row gap-4 md:gap-10 justify-center items-center mt-8 lg:mt-0">
+          <div className={`flex flex-row gap-4 md:gap-10 justify-center items-center mt-8 lg:mt-0 reveal reveal-right ${inView} reveal-delay-2`}>
             <div className="relative mt-20 hover:-translate-y-4 transition-transform duration-300">
               <CharizardCard title="PITCH ARENA" />
             </div>

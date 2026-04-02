@@ -211,3 +211,41 @@ html {
 .badge-float-med {
   animation: floatX 3.5s ease-in-out infinite;
 }
+
+/* ── Page-load animations (above-fold / Hero) ── */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(32px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeInScale {
+  from { opacity: 0; transform: scale(0.85); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+.anim-fade-up {
+  animation: fadeInUp 0.75s ease both;
+}
+.anim-fade-scale {
+  animation: fadeInScale 0.65s ease both;
+}
+
+/* ── Scroll-reveal (below-fold sections) ── */
+.reveal {
+  opacity: 0;
+  /* No transition here — exit (reset) snaps instantly, no visible slide-out */
+}
+.reveal-up    { transform: translateY(44px); }
+.reveal-left  { transform: translateX(-52px); }
+.reveal-right { transform: translateX(52px); }
+.reveal-scale { transform: scale(0.9); }
+
+.reveal.in-view {
+  opacity: 1;
+  transform: none;
+  transition: opacity 0.75s ease, transform 0.75s ease;
+}
+
+.reveal-delay-1 { transition-delay: 0.12s; }
+.reveal-delay-2 { transition-delay: 0.24s; }
+.reveal-delay-3 { transition-delay: 0.36s; }
+.reveal-delay-4 { transition-delay: 0.48s; }

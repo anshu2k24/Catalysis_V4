@@ -4,6 +4,7 @@ import Image from "next/image";
 import Container from "@/components/common/Container";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { useInView } from "@/hooks/useInView";
 
 export interface TimelineEvent {
   day: 1 | 2 | 3;
@@ -288,13 +289,16 @@ function MobileTimeline() {
 }
 
 export default function Timeline() {
+  const [sectionRef, isInView] = useInView<HTMLElement>({ threshold: 0.08 });
+  const inView = isInView ? "in-view" : "";
+
   return (
-    <section id="timeline" className="py-20 bg-[#FFEEF0]">
+    <section ref={sectionRef} id="timeline" className="py-20 bg-[#FFEEF0]">
       <Container>
         <div className="grid lg:grid-cols-2 gap-10">
 
           {}
-          <div className="hidden lg:flex gap-6">
+          <div className={`hidden lg:flex gap-6 reveal reveal-left ${inView}`}>
             <div className="flex flex-col justify-between text-sm text-gray-600 pr-2">
               {[
                 "09:00", "09:30", "10:00", "10:30", "11:00", "11:30",
@@ -318,7 +322,7 @@ export default function Timeline() {
             </p>
           </div>
 
-          <div className="w-full">
+          <div className={`w-full reveal reveal-right ${inView} reveal-delay-2`}>
             <MobileTimeline />
             <DesktopTimeline />
           </div>

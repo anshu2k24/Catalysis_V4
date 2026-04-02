@@ -1,5 +1,7 @@
+"use client";
 import Image from "next/image";
 import Container from "@/components/common/Container";
+import { useInView } from "@/hooks/useInView";
 
 interface BadgeProps {
   label: string;
@@ -286,24 +288,32 @@ function AboutRight() {
 
 
 export default function About() {
+  const [sectionRef, isInView] = useInView<HTMLElement>({ threshold: 0.1 });
+  const inView = isInView ? "in-view" : "";
+
   return (
     <section
+      ref={sectionRef}
       id="about"
       className="relative w-full bg-[#FFEEF0] py-2 md:py-1 overflow-hidden"
     >
       <Container>
 
         <div className="block md:hidden space-y-10">
-          <AboutLeft />
-          <AboutMobile />
+          <div className={`reveal reveal-left ${inView}`}>
+            <AboutLeft />
+          </div>
+          <div className={`reveal reveal-scale ${inView} reveal-delay-2`}>
+            <AboutMobile />
+          </div>
         </div>
 
         <div className="hidden md:grid grid-cols-3 gap-8 items-center">
-          <div className="col-span-1">
+          <div className={`col-span-1 reveal reveal-left ${inView}`}>
             <AboutLeft />
           </div>
 
-          <div className="flex justify-center z-20">
+          <div className={`flex justify-center z-20 reveal reveal-scale ${inView} reveal-delay-2`}>
             <Image
               src="/hero/Pokeball.png"
               alt="Large Central Pokeball"
@@ -313,7 +323,7 @@ export default function About() {
             />
           </div>
 
-          <div className="col-span-1 mt-1 overflow-visible">
+          <div className={`col-span-1 mt-1 overflow-visible reveal reveal-right ${inView} reveal-delay-3`}>
             <AboutRight />
           </div>
         </div>
