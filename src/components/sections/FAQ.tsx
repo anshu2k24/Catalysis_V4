@@ -1,7 +1,7 @@
 "use client";
 
 import Container from "@/components/common/Container";
-import Image from "next/image";
+// import Image from "next/image";
 import { useState } from "react";
 
 const qna = [
@@ -20,7 +20,7 @@ const qna = [
   },
   {
     question: "How do I register?",
-    answer: "You can register using the register button on the homepage. Simply fill out the form and you'll receive a confirmation email.",
+    answer: "You can register using the register button on the homepage. Simply fill out the form and you&apos;ll receive a confirmation email.",
   },
 ];
 
@@ -39,27 +39,25 @@ export default function FAQ() {
                </div>
                
                <div className="mb-6">
-                 <Image 
-                    src="/faq.png" 
-                    alt="Frequently Asked Questions" 
-                    width={500} 
-                    height={100}
-                    className="object-contain"
-                 />
+                <h1 className="font-gliker font-medium text-[34px] sm:text-[42px] md:text-[52px] leading-[1.08] tracking-[-0.005em] text-[#3A001D] max-w-[650px]">
+                  Frequently Asked Questions
+                </h1>
                </div>
 
-               <p className="text-[#3b0a1e] font-medium text-lg leading-relaxed mb-10">
+               <p className="text-[#3b0a1e] font-nunito text-lg leading-relaxed mb-10">
                 Don&apos;t hesitate to reach out with any questions you might have, whether they&apos;re big or small. We&apos;re always ready and eager to assist you with anything you need, ensuring you get the support and answers you&apos;re looking for every step of the way!
                </p>
             </div>
 
             <div className="relative bg-white border-2 border-black rounded-[2rem] p-6 h-36 flex flex-col justify-between shadow-sm">
+              <label htmlFor="faq-input" className="sr-only">Type your message</label>
               <input
+                id="faq-input"
                 placeholder="Type message..."
                 className="bg-transparent outline-none w-full text-lg placeholder:text-gray-400 font-medium"
               />
               <div className="flex justify-end">
-                <button className="bg-[#E3242B] text-white font-bold px-6 py-3 rounded-xl border-2 border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] hover:translate-y-[1px] hover:shadow-none transition-all active:scale-95">
+                <button className="bg-[#E3242B] cursor-pointer text-white font-bold px-6 py-3 rounded-xl border-2 border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] hover:translate-y-[1px] hover:shadow-none transition-all active:scale-95">
                   SEND MESSAGE
                 </button>
               </div>
