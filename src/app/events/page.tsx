@@ -5,12 +5,12 @@ import EventCard from "@/components/ui/eventcard";
 export default function EventsPage() {
 
     const ARENAS_DATA = [
-        { name: "DSA SMACKDOWN", type: "STRATEGY TYPE", image: "/pokemons/charizard.svg", color: "#FFD1D1", detailsLink: "/events/pitch", top: "-top-[25px]", },
-        { name: "PITCH PERFECT", type: "STRATEGY TYPE", image: "/pokemons/bulbasaur.png", color: "#D1FFE9", detailsLink: "/events/code" },
-        { name: "CODING RELAY", type: "STRATEGY TYPE", image: "/pokemons/charmeleon.svg", color: "#FFD1D1", detailsLink: "/events/pitch", top: "-top-[25px]", },
-        { name: "TECHNOSEEK", type: "STRATEGY TYPE", image: "/pokemons/venusaur.svg", color: "#D1FFE9", detailsLink: "/events/code", top: "-top-[10px]", },
-        { name: "CLASH ROYALE", type: "STRATEGY TYPE", image: "/pokemons/wartortle.svg", color: "#FFD1D1", detailsLink: "/events/pitch", top: "-top-[20px]", },
-        { name: "TYPEMASTER", type: "STRATEGY TYPE", image: "/pokemons/blastoise.svg", color: "#D1FFE9", detailsLink: "/events/code" },
+        { name: "DSA SMACKDOWN", type: "STRATEGY TYPE", image: "/pokemons/alakazam.svg", color: "#FFD1D1", detailsLink: "/events/pitch",},
+        { name: "PITCH PERFECT", type: "STRATEGY TYPE", image: "/pokemons/jigglypuff.svg", color: "#D1FFE9", detailsLink: "/events/code", width: 175, height: 175},
+        { name: "CODING RELAY", type: "STRATEGY TYPE", image: "/pokemons/ditto.svg", color: "#FFD1D1", detailsLink: "/events/pitch", top: "-top-[25px]", },
+        { name: "TECHNOSEEK", type: "STRATEGY TYPE", image: "/pokemons/zoroark.svg", color: "#D1FFE9", detailsLink: "/events/code", top: "-top-[30px]", },
+        { name: "CLASH ROYALE", type: "STRATEGY TYPE", image: "/pokemons/arceus.svg", color: "#FFD1D1", detailsLink: "/events/pitch", width: 175, height: 160,},
+        { name: "TYPEMASTER", type: "STRATEGY TYPE", image: "/pokemons/rayquaza.svg", color: "#D1FFE9", detailsLink: "/events/code", width: 200, height: 175, },
         ];
 
   return (

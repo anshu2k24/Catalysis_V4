@@ -7,6 +7,8 @@ interface EventCardProps {
     image: string;
     color: string;
     top?: string;
+    width?: number;
+    height?: number;
   };
 }
 
@@ -25,12 +27,12 @@ export default function EventCard({ event }: EventCardProps) {
       ease-out 
       hover:-translate-y-3
     ">
-      <div className={`absolute ${event.top || "top-[-50px]"} z-10 w-[229px] h-[207px]`}>
+      <div className={`absolute ${event.top || "top-[-50px]"} z-10 w-[229px] h-[207px] flex items-center justify-center`}>
         <Image
           src={event.image}
           alt={event.name}
-          width={229}
-          height={207}
+          width={event.width || 229}
+          height={event.height || 207}
           className="object-contain"
           priority
         />
