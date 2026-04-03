@@ -160,6 +160,11 @@ html {
   scroll-behavior: smooth;
 }
 
+main {
+  width: 100%;
+  overflow: hidden;
+}
+
 /* hero page ka finger tap ka animation*/
 @keyframes fingerTap {
   0% {
